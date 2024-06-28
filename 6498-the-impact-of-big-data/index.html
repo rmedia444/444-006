@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ACE 66</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="assets/ico" href="assets/favicon.ico">
+		<!-- tailwind CSS CDN -->
+		<script src="https://cdn.tailwindcss.com/"></script>
+		<link rel="stylesheet" href="assets/spin-animation.css">
+		<style type="text/tailwindcss">
+			@layer components {
+			.logo {
+			@apply 
+			lg:content-[url(assets/logo.png)] lg:w-[8vw]
+			content-[url(assets/logo.png)] w-[20vw]
+			}
+			.top-section{
+			@apply flex justify-center bg-[white]
+			py-[1rem]
+			}
+			.middle-section{
+			@apply flex justify-center items-center
+			bg-[url(assets/bg.jpg)] bg-cover bg-[bottom_center] lg:h-[95vw]
+			h-[100vh]
+			md:h-[160vh]
+			max-[768px]:h-[90vh]
+			max-[425px]:h-[94vh]
+			}
+			.outer-wheel{
+			@apply content-[url(assets/outer-wheel.png)] 
+			lg:h-[50vw] lg:mt-[0vw]
+			
+			relative z-10 h-[95vw] mt-[45vw]
+			}
+			.inner-wheel{
+			@apply content-[url(assets/inner-wheel2.png)] lg:h-[36.5vw] lg:mt-[-1.5vw] lg:ml-[1vw]
+			
+			absolute z-0 
+			mt-[42.1vw] ml-[2.5vw] h-[72vw]
+			}
+			.title-section-phase-1{
+			@apply flex justify-center relative 
+			}
+			.title-section-phase-2{
+			@apply flex justify-center relative opacity-0
+			}
+			.title-section-phase-3{
+			@apply flex justify-center relative opacity-0
+			}
+			.heading-styles-1{
+			@apply lg:text-[3vw] lg:text-white lg:mt-[0vw] font-bold absolute
+			text-[6vw] text-white mt-[2vw]
+			}
+			.description-styles{
+			@apply xl:leading-[2.4rem]
+			lg:text-[2.2vw] lg:mt-[5vw] lg:px-[25vw] lg:leading-[1.8rem]
+			md:leading-[2.4rem]
+			max-[425px]:text-[4vw]
+			text-center absolute
+			text-white text-[5vw] mt-[12vw] leading-[2rem] px-[5vw] mb-2
+			}
+			.gold-btn-styles{
+			@apply lg:w-[26vw] lg:h-[4vw] lg:text-[1.8vw] lg:rounded-[0.5vw] lg:mt-[17vw] lg:leading-[1vw] lg:whitespace-nowrap
+			flex justify-center items-center
+			bg-gradient-to-b from-yellow-200 to-yellow-600 border border-yellow-800
+			uppercase font-bold text-black absolute 
+			w-[38vw] h-[12vw] text-[4.5vw] rounded-[1.5vw] mt-[50vw] leading-[3.5vw] z-50
+			max-[768px]:w-[65vw]
+			}
+			.text-shadow{
+			@apply drop-shadow-[1px_1px_1px_rgba(255,255,255)]
+			}
+			.ticker{
+			@apply lg:text-[1.7vw] lg:mt-[8.5vw] text-center absolute
+			lg:leading-[2vw] lg:w-[0vw] lg:mt-[0.2vw] lg:mr-[0vw] lg:mb-[0vw] lg:ml-[0.7vw] 
+			text-yellow-500 text-[5vw] mt-[28vw] leading-[5vw] font-bold w-[1vw] ml-[-40vw]
+			mt-[0.5vw] mr-[0vw] mb-[0vw] ml-[3vw] 
+			}
+			.ticker-bg{
+			@apply bg-[black] lg:w-[15vw] lg:h-[2.5vw] lg:mt-[13vw] absolute
+			w-[46vw] h-[7vw] mt-[40.5vw]
+			}
+			.timer{
+			@apply lg:text-[1.8vw] lg:mt-[14vw] text-center absolute
+			lg:px-[25vw] lg:leading-[2vw] drop-shadow-[1px_1px_1px_rgba(0,0,0)]
+			max-[425px]:text-[4vw]
+			text-red-600 text-[5vw] mt-[40vw] leading-[5vw] px-[5vw] font-medium
+			}
+			.claim-now-styles{
+			/* @apply lg:mt-[8%] lg:mr-[0%] lg:mb-[0%] lg:ml-[23%] absolute
+			mt-[9%] mr-[0%] mb-[0%] ml-[23%]  */
+			}
+			#AlertBoxContainer{
+			@apply fixed left-[2vw] bottom-[2vw] z-50
+			}
+			.alertImg{
+			@apply lg:w-[30vw] w-[65vw]
+			}
+			}
+		</style>
+		<meta http-equiv="delegate-ch" content="sec-ch-ua https://rettablewizette.com; sec-ch-ua-mobile https://rettablewizette.com; sec-ch-ua-arch https://rettablewizette.com; sec-ch-ua-model https://rettablewizette.com; sec-ch-ua-platform https://rettablewizette.com; sec-ch-ua-platform-version https://rettablewizette.com; sec-ch-ua-bitness https://rettablewizette.com; sec-ch-ua-full-version-list https://rettablewizette.com; sec-ch-ua-full-version https://rettablewizette.com"><style>.dtpcnt{opacity: 0;}</style>
+		<script>
+			(function(d,c,k,l,r,t,g,u,A,e,m,v,B,a,n,p,h,q,w,D,x){function y(){for(var f=c.querySelectorAll(".dtpcnt"),b=0,a=f.length;b<a;b++)f[b][u]=f[b][u].replace(/(^|\s+)dtpcnt($|\s+)/g,"")}function C(a,b,d,e){var f=new Date;f.setTime(f.getTime()+(e||864E5));c.cookie=a+"="+b+"; "+d+"samesite=Strict; expires="+f.toGMTString()+"; path=/";k.setItem(a,b);k.setItem(a+"-expires",f.getTime())}function z(a){var b=c.cookie.match(new RegExp("(^| )"+a+"=([^;]+)"));return b?b.pop():k.getItem(a+"-expires")&&+k.getItem(a+
+		"-expires")>(new Date).getTime()?k.getItem(a):null}x="https:"===d.location.protocol?"secure; ":"";d[e]||(d[e]=function(){(d[e].q=d[e].q||[]).push(arguments)},p=c[r],c[r]=function(){p&&p.apply(this,arguments);if(d[e]&&!d[e].hasOwnProperty("params")&&/loaded|interactive|complete/.test(c.readyState))for(;a=c[t][m++];)/\/?click\/?($|(\/[0-9]+)?$)/.test(a.pathname)&&(a[g]="javascrip"+d.postMessage.toString().slice(4,5)+":"+e+'.l="'+a[g]+'",void 0')},setTimeout(function(){(q=/[?&]cpid(=([^&#]*)|&|#|$)/.exec(d.location.href))&&
+		q[2]&&(h=q[2],w=z("vl-"+h));var f=z("vl-cep"),b=location[g];if("savedCep"===B&&f&&(!h||"undefined"===typeof h)&&0>b.indexOf("cep=")){var e=-1<b.indexOf("?")?"&":"?";b+=e+f}a=c.createElement("script");n=c.scripts[0];a.defer=1;a.src=v+(-1===v.indexOf("?")?"?":"&")+"lpref="+l(c.referrer)+"&lpurl="+l(b)+"&lpt="+l(c.title)+"&vtm="+(new Date).getTime()+(w?"&uw=no":"");a[A]=function(){for(m=0;a=c[t][m++];)/dtpCallback\.l/.test(a[g])&&(a[g]=decodeURIComponent(a[g]).match(/dtpCallback\.l="([^"]+)/)[1]);y()};
+		n.parentNode.insertBefore(a,n);h&&C("vl-"+h,"1",x)},0),setTimeout(y,7E3))})(window,document,localStorage,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",0,"https://rettablewizette.com/d/ef44de0f-9400-4273-80ca-8bbcf01ff6e6.js","savedCep");
+		</script>
+		<noscript><link href="https://rettablewizette.com/d/ef44de0f-9400-4273-80ca-8bbcf01ff6e6.js?noscript=true&lpurl=" rel="stylesheet"/></noscript>
+
+	</head>
+	<body>
+		<div class="top-section" id="top">
+			<img class="logo" />
+		</div>
+		<div class="title-section-phase-1">
+			<h1 class="heading-styles-1">Congratulations!</h1>
+			<span class="description-styles">Every week, we pick <strong>1 out of 10</strong> Malaysian Facebook users
+				to
+				spin the <strong>Wheel of Bonus</strong>. Click below to reveal your prize.</span>
+			<span class="hide timer text-shadow">This limited-time offer ends in <strong><span
+				id="counter"></span></strong></span>
+			<button class="hide gold-btn-styles z-10" onclick="startSpin()">
+			<span class="text-shadow">SPIN THE WHEEL</span>
+			</button>
+		</div>
+		<div class="title-section-phase-2">
+			<h1 class="heading-styles-1">TRY AGAIN!</h1>
+			<span class="description-styles">
+			<strong>
+			<p class="">YOU GOT 1 CHANCE TO SPIN AGAIN</p>
+			</strong>
+			</span>
+			<button class="hide2 gold-btn-styles z-10" onclick="startSpinWin()">
+			<span class=" text-shadow claim-now-styles">SPIN AGAIN</span>
+			</a>
+		</div>
+		<div class="title-section-phase-3">
+			<h1 class="heading-styles-1">Hurray!</h1>
+			<span class="description-styles">
+			<strong>
+			<p>YOU'VE WON<br></p>
+			<p>FREE 88 SPINS<br></p>
+			</strong>
+			</span>
+			<span class="ticker-bg">
+			<span class="ticker" id="jackpotAmount">35214060</span>
+			</span>
+			<a class="gold-btn-styles z-100" href="https://rettablewizette.com/click" target="_self">
+			<span class="text-shadow claim-now-styles">CLAIM 88 FREE SPINS NOW</span>
+			</a>
+		</div>
+		<div class="middle-section">
+			<img class="outer-wheel" id="wheel" />
+			<img class="inner-wheel spin" />
+		</div>
+		<!-- popup msg -->
+		<span style="display: none;" id="itemCountDown">75</span>
+		<!-- jQuery CDN -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="assets/custom-progressive-jackpot-ticker.js"></script>
+		
+		<script>
+			function scrollToDiv(elementId) {
+			    var element = document.getElementById(elementId);
+			    if (element) {
+			        element.scrollIntoView({ behavior: "smooth" });
+			    }
+			}
+			
+			function startSpin() {
+			
+			    $(".hide").fadeOut(1000);
+			    scrollToDiv("wheel");
+			    $(".spin").addClass("spinAround");
+			
+			    setTimeout(function () {
+			        setTimeout(function () {
+			            $(".title-section-phase-1").addClass("opacity-0");
+			            $(".title-section-phase-2").addClass("opacity-100");
+			            scrollToDiv("top");
+			
+			        }, 200);
+			    }, 6800);
+			}
+
+			function startSpinWin() {
+			
+			$(".hide2").fadeOut(1000);
+			scrollToDiv("wheel");
+			$(".spin").removeClass("spinAround");
+			$(".spin").addClass("spinAroundWin");
+
+		
+			setTimeout(function () {
+				setTimeout(function () {
+					$(".title-section-phase-2").removeClass("opacity-100");
+					$(".title-section-phase-2").addClass("opacity-0");
+					$(".title-section-phase-3").addClass("opacity-100");
+					scrollToDiv("top");
+		
+				}, 200);
+			}, 6800);
+		}
+			
+			countdown(10);
+			
+			// Countdown function
+			function countdown(val) {
+			    var milliseconds = 60;
+			    var seconds = val
+			
+			    function tick() {
+			        var counter = document.getElementById("counter");
+			        var current_timer = seconds - 1
+			        milliseconds--;
+			        counter.innerHTML = current_timer.toString() + ":" + (milliseconds < 10 ? "0" : "") + String(milliseconds);
+			        if (milliseconds > 0) {
+			            setTimeout(tick, 100);
+			        } else {
+			            if (seconds > 1) {
+			                countdown(seconds - 1);
+			            }
+			        }
+			    }
+			    tick();
+			}
+			
+			function createAlertBox(text) {
+			    var alertContainer = $("#AlertBoxContainer");
+			    if (!alertContainer.length) {
+			        alertContainer = $('<div id="AlertBoxContainer">').appendTo("body");
+			    }
+			    var msgBox = $("<div>" + text + "</div>").prependTo(alertContainer);
+			    msgBox.find(".close").on("click", function () {
+			        msgBox.slideUp();
+			    });
+			
+			    setTimeout(function () {
+			        msgBox.slideUp();
+			    }, 5000);
+			}
+			
+			$("#itemCountDown").each(function () {
+			    var $this = $(this);
+			
+			    var counter = 30 + parseInt(60 * Math.random());
+			    console.log(counter);
+			    $this.html(counter);
+			    var percentCount = 99;
+			    var percentInterval = setInterval(function () {
+			        if (percentCount == counter) {
+			            clearInterval(percentInterval);
+			        }
+			        $("#itemProgressDownBar").css({
+			            width: percentCount-- + "%",
+			        });
+			    }, 30);
+			
+			    var randomPics = [
+			        "assets/win6.png",
+			        "assets/win7.png",
+			        "assets/win8.png",
+			        "assets/win9.png",
+			        "assets/win10.png"
+			    ];
+			
+			    var sellOneItem = function () {
+			        $this.addClass("counter-changing");
+			        setTimeout(function () {
+			            $this.removeClass("counter-changing");
+			            $this.html(--counter);
+			            $("#itemProgressDownBar").attr("style", "width:" + counter + "%;");
+			            var valueRand = parseInt(Math.random() * (randomPics.length - 1));
+			            var randomPic = randomPics[valueRand];
+			            createAlertBox('<img class="alertImg" src="' + randomPic + '">');
+			            sellNextItem();
+			        }, 0);
+			    };
+			    var sellNextItem = function () {
+			        var time = 5000 + parseInt(Math.random() * 5000);
+			        setTimeout(sellOneItem, time);
+			    };
+			
+			    sellNextItem();
+			});
+			
+		</script>
+	</body>
+</html>
